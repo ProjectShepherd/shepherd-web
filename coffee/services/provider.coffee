@@ -1,4 +1,6 @@
-angular.module("app.providers", []).value "FormList",
+angular.module("app.providers", [])
+
+.value "FormList",
 
   eyes: [
     color: "Amber"

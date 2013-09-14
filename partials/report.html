@@ -7,6 +7,8 @@
 	<form ng-submit="makeReport()">
 		first name<input type="text" ng-model="report.fName" required></input>
 		<br>
+		middle name<input type="text" ng-model="report.mName"></input>
+		<br>
 		last name<input type="text" ng-model="report.lName" required></input>
 		<br>
 		height<input type="number" ng-model="report.height" required></input>inches
@@ -21,7 +23,7 @@
 		Female<input type="radio" value="F" ng-model="report.sex">
 		<br>
 		eyes
-		<select ng-model="report.eye" ng-options="choice.color for choice in eyeColors" required></select>
+		<select ng-model="report.eyes" ng-options="choice.color for choice in eyeColors" required></select>
 		<br>
 		hair
 		<select ng-model="report.hair" ng-options="choice.color for choice in hairColors" required></select>
@@ -31,7 +33,24 @@
 		<br>
 		complexion<input type="text" ng-model="report.complexion" required></input>
 		<br>
+		description
+		<br>
+		<textarea ng-model="report.description" cols="60" rows="10"></textarea>
+		<h3>
+			Submitter Information
+		</h3>
+		first name<input type="text" ng-model="report.submitter.fName" required></input>
+		<br>
+		middle name<input type="text" ng-model="report.submitter.mName"></input>
+		<br>
+		last name<input type="text" ng-model="report.submitter.lName" required></input>
+		<br>
+		phone<input type="text" ng-model="report.submitter.phone" required></input>
+		<br>
+		email<input type="text" ng-model="report.submitter.email" required></input>
+
 		<input type="submit" value="Make Report"></input>
+
 	</form>
 </div>
 
