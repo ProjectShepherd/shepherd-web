@@ -19,3 +19,12 @@ body {
   margin: 0 auto;
   max-width: $body-max-width;
 }
+
+label {
+  font-weight: bold;
+}
+
+legend {
+  font-size: 30px !important; 
+  font-weight: bold;
+}
