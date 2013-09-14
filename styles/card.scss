@@ -2,6 +2,41 @@ $card-background: #9C6B4C;
 $card-padding: 10px;
 $card-size: 300px;
 
+.card-animation-enter,
+.card-animation-leave,
+.card-animation-move {
+  -webkit-transition: 1s linear all;
+  -moz-transition: 1s linear all;
+  -o-transition: 1s linear all;
+  transition: 1s linear all;
+  position:relative;
+}
+
+.card-animation-enter {
+  left:-10px;
+  opacity:0;
+}
+.card-animation-enter.card-animation-enter-active {
+  left:0;
+  opacity:1;
+}
+
+.card-animation-leave {
+  left:0;
+  opacity:1;
+}
+.card-animation-leave.card-animation-leave-active {
+  left:-10px;
+  opacity:0;
+}
+
+.card-animation-move {
+  opacity:0.5;
+}
+.card-animation-move.card-animation-move-active {
+  opacity:1;
+}
+
 .card {
   background-color: $card-background;
   margin: $card-padding;
