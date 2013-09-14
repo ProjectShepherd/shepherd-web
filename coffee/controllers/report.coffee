@@ -2,7 +2,7 @@
 angular.module("app.report", [])
 
 .controller "Report", ($scope, $http, $q, FormList) ->
-
+  
   $scope.eyeColors = FormList.eyes
   $scope.hairColors = FormList.hair
   $scope.raceChoices = FormList.race
@@ -118,3 +118,5 @@ angular.module("app.report", [])
         null
     null
   null
+  
+

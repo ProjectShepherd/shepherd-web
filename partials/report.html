@@ -1,4 +1,5 @@
 
+
 <div>
 	<form class="pure-form pure-form-stacked">
         <fieldset>
@@ -66,9 +67,40 @@
             <input type="text" ng-model="report.complexion" required></input>
             <br/>
             <button ng-click="pickPhotos()">Add Photos</button>
-    		<br/>
+    		<br/><br/>
             <label>Description</label>
     		<textarea ng-model="report.description" cols="60" rows="10"></textarea>
+            <br/>
+            <label>
+            Last known Geo-Coordinates: <button type="button" onclick="myGeoPositionGeoPicker({
+                    startAddress     : 'White House, Washington',
+                    returnFieldMap   : {
+                                         'geoposition1a' : '<LAT>',
+                                         'geoposition1b' : '<LNG>',
+                                         'geoposition1c' : '<CITY>',
+                                       }
+                });">Map it!</button>
+            </label>
+            
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <label>Latitude</label>
+            		<input type="text" name="geoposition1a" id="geoposition1a" size="15">
+                </div>
+            
+                <div class="pure-u-1-4">
+                    <label>Longitude</label>
+            		<input type="text" name="geoposition1a" id="geoposition1b" size="15">
+
+                </div>
+            
+                <div class="pure-u-1-4">
+                    <label>City</label>
+            		<input type="text" name="geoposition1a" id="geoposition1c" size="40">
+                </div>
+            </div>
+            
+            
     		<h3>
     			Submitter Information
     		</h3>
