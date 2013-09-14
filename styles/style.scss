@@ -19,3 +19,19 @@ body {
   margin: 0 auto;
   max-width: $body-max-width;
 }
+
+label {
+  font-weight: bold;
+}
+
+legend {
+  font-size: 30px !important; 
+  font-weight: bold;
+}
+
+#noone-found {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 26px;
+}

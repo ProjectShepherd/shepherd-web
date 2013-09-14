@@ -41,10 +41,17 @@ $card-size: 300px;
   background-color: $card-background;
   margin: $card-padding;
   max-width: $card-size;
+  overflow: hidden;
 }
 
 .card-image {
   padding: $card-padding;
+  width: 200px;
+  text-align: center;
+
+  img {
+    max-height: 200px;
+  }
 }
 
 .card-placeholder-image {
@@ -53,6 +60,7 @@ $card-size: 300px;
 }
 
 .card-name,
+.card-status,
 .card-text {
   text-align: center;
   padding: $card-padding;
@@ -65,6 +73,20 @@ $card-size: 300px;
 
 .card-text {
   padding-top: 0px;
+}
+
+.card-status {
+  padding: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-missing {
+  color: red;
+}
+
+.card-found {
+  color: green;
 }
 
 @media (max-width: 768px) {

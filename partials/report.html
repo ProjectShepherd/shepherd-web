@@ -1,59 +1,149 @@
 
+
 <div>
-	<h2>
-		Make a Missing Persons Report
-	</h2>
+	<form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend>Make a Missing Persons Report</legend>
+            <div class="pure-g-r">
+                <div class="pure-u-1-3">
+                    <label>First Name</label>
+                    <input type="text" ng-model="report.fName" required></input>
+                </div>
+        		<div class="pure-u-1-3">
+                    <label>Middle Name</label>
+                    <input type="text" ng-model="report.mName"></input>
+                </div>
+        		<div class="pure-u-1-3">
+                    <label>Last Name</label>
+                    <input type="text" ng-model="report.lName" required></input>
+                </div>
+            </div>
+            <br/>
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <label>Height</label>
+                    <input class="pure-input-1-2" type="text" ng-model="report.height" required placeholder="in inches"></input>
+                </div>
+                <div class="pure-u-1-4">
+                    <label>Age</label>
+                    <input class="pure-input-1-2" type="text" ng-model="report.age" required></input>
+                </div>
+                <div class="pure-u-1-4">
+                    <label>Weight</label>
+            		<input class="pure-input-1-2" type="text" ng-model="report.weight" required></input>
+                </div>
+                <div class="pure-u-1-4">
+                    <label>Sex</label>
+                    <label class="pure-radio">
+                		Male<input type="radio" value="M" ng-model="report.sex">
+                    </label>
+                    <label class="pure-radio">
+                        Female<input type="radio" value="F" ng-model="report.sex">
+                    </label>
+                </div>
+            </div>
+            
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <label>Eye Color</label>
+            		<select ng-model="report.eyes" ng-options="choice.color for choice in eyeColors" required></select>
+                </div>
+                
+                <div class="pure-u-1-4">
+                    <label>Hair</label>
+            		<select ng-model="report.hair" ng-options="choice.color for choice in hairColors" required></select>
 
-	<form>
-		first name<input type="text" ng-model="report.fName" required></input>
-		<br>
-		middle name<input type="text" ng-model="report.mName"></input>
-		<br>
-		last name<input type="text" ng-model="report.lName" required></input>
-		<br>
-		height<input type="number" ng-model="report.height" required></input>inches
-		<br>
-		age<input type="number" ng-model="report.age" required></input>
-		<br>
-		weight<input type="number" ng-model="report.weight" required></input>
-		<br>
-		sex
-		<br>
-		Male<input type="radio" value="M" ng-model="report.sex">
-		Female<input type="radio" value="F" ng-model="report.sex">
-		<br>
-		eyes
-		<select ng-model="report.eyes" ng-options="choice.color for choice in eyeColors" required></select>
-		<br>
-		hair
-		<select ng-model="report.hair" ng-options="choice.color for choice in hairColors" required></select>
-		<br>
-		race
-		<select ng-model="report.race" ng-options="choice.value for choice in raceChoices" required></select>
-		<br>
-		complexion<input type="text" ng-model="report.complexion" required></input>
-		<br>
-		description
-		<br>
-		<textarea ng-model="report.description" cols="60" rows="10"></textarea>
-		<br>
-		<button ng-click="pickPhotos()">Add Photos</button>
-		<h3>
-			Submitter Information
-		</h3>
-		first name<input type="text" ng-model="report.submitter.fName" required></input>
-		<br>
-		middle name<input type="text" ng-model="report.submitter.mName"></input>
-		<br>
-		last name<input type="text" ng-model="report.submitter.lName" required></input>
-		<br>
-		phone<input type="text" ng-model="report.submitter.phone" required></input>
-		<br>
-		email<input type="text" ng-model="report.submitter.email" required></input>
+                </div>
+                
+                <div class="pure-u-1-4">
+                    <label>Race</label>
+            		<select ng-model="report.race" ng-options="choice.value for choice in raceChoices" required></select>
+                </div>
+            </div>
+            
+            <br/>
 
-		<button ng-click="makeReport()">Create Report</button>
+            <label>Complexion</label>
+            <input type="text" ng-model="report.complexion" required></input>
+            <br/>
+            <button ng-click="pickPhotos()">Add Photos</button>
+    		<br/><br/>
+            <label>Description</label>
+    		<textarea ng-model="report.description" cols="60" rows="10"></textarea>
+            <br/>
+            <label>
+            Last known Geo-Coordinates: <button type="button" onclick="myGeoPositionGeoPicker({
+                    startAddress     : 'White House, Washington',
+                    returnFieldMap   : {
+                                         'geoposition1a' : '<LAT>',
+                                         'geoposition1b' : '<LNG>',
+                                         'geoposition1c' : '<CITY>',
+                                         'geoposition1d' : '<STATE>',
+                                         'geoposition1e' : '<COUNTRY>',
+                                       }
+                });">Map it!</button>
+            </label>
+            
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <label>Latitude</label>
+            		<input type="text" name="geoposition1a" id="geoposition1a" size="15" readonly>
+                </div>
+            
+                <div class="pure-u-1-4">
+                    <label>Longitude</label>
+            		<input type="text" name="geoposition1a" id="geoposition1b" size="15" readonly>
 
+                </div>
+            </div>
+            <div class="pure-g-r">
+                <div class="pure-u-1-2">
+                    <label>City</label>
+            		<input type="text" name="geoposition1a" id="geoposition1c" size="40" readonly>
+                </div>
+                
+                <div class="pure-u-1-4">
+                    <label>State</label>
+            		<input type="text" name="geoposition1a" id="geoposition1d" size="10" readonly>
+                </div>
+                
+                <div class="pure-u-1-4">
+                    <label>Country</label>
+            		<input type="text" name="geoposition1a" id="geoposition1e" size="10" readonly>
+                </div>
+            </div>
+            
+            
+    		<h3>
+    			Submitter Information
+    		</h3>
+            <div class="pure-g-r">
+                <div class="pure-u-1-3">
+                    <label>First Name</label>
+                    <input type="text" ng-model="report.submitter.fName" required></input>
+                </div>
+        		<div class="pure-u-1-3">
+                    <label>Middle Name</label>
+                    <input type="text" ng-model="report.submitter.mName"></input>
+                </div>
+        		<div class="pure-u-1-3">
+                    <label>Last Name</label>
+                    <input type="text" ng-model="report.submitter.lName"></input>
+                </div>
+            </div>
+            <div class="pure-g-r">
+                <div class="pure-u-1-3">
+                    <label>Phone</label>
+                    <input type="text" ng-model="report.submitter.phone" required></input>
+                </div>
+        		<div class="pure-u-1-3">
+                    <label>Email</label>
+                    <input type="text" ng-model="report.submitter.email" required></input>
+                </div>
+            </div>
+    		<button ng-click="makeReport()">Create Report</button>
+        </fieldset>
 	</form>
 </div>
 
-<pre>{{ report | json }}</pre>
+<!-- <pre>{{ report | json }}</pre> -->
