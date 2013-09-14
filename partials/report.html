@@ -4,7 +4,7 @@
 		Make a Missing Persons Report
 	</h2>
 
-	<form ng-submit="makeReport()">
+	<form>
 		first name<input type="text" ng-model="report.fName" required></input>
 		<br>
 		middle name<input type="text" ng-model="report.mName"></input>
@@ -36,6 +36,8 @@
 		description
 		<br>
 		<textarea ng-model="report.description" cols="60" rows="10"></textarea>
+		<br>
+		<button ng-click="pickPhotos()">Add Photos</button>
 		<h3>
 			Submitter Information
 		</h3>
@@ -49,7 +51,7 @@
 		<br>
 		email<input type="text" ng-model="report.submitter.email" required></input>
 
-		<input type="submit" value="Make Report"></input>
+		<button ng-click="makeReport()">Create Report</button>
 
 	</form>
 </div>
