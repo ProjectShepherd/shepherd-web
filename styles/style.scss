@@ -1,1 +1,17 @@
-@import "header"
+@import "header";
+@import "card";
+
+$body-max-width: 720px;
+
+#app-desc {
+  text-align: center;
+}
+
+body {
+  background-color: white;
+}
+
+.main-view {
+  margin: 0 auto;
+  max-width: $body-max-width; 
+}

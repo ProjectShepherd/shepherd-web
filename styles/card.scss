@@ -1,0 +1,32 @@
+$card-background: #aaaaaa;
+$card-padding: 10px;
+$card-size: 300px;
+
+.card {
+  background-color: $card-background;
+  margin: $card-padding;
+  max-width: $card-size;
+}
+
+.card-image {
+  padding: $card-padding;
+}
+
+.card-placeholder-image {
+  height: 200px;
+  background-color: black;
+}
+
+.card-text {
+  text-align: center;
+  margin-top: $card-padding;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+    margin-top: $card-padding;
+    margin-bottom: $card-padding;
+  }
+}
+
