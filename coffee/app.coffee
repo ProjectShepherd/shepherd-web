@@ -1,4 +1,5 @@
 
+
 app = angular.module("app", ["app.home", "app.report", "app.providers"])
 
 app.config ["$routeProvider", ($routeProvider) ->
