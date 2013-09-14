@@ -92,7 +92,6 @@ angular.module("app.report", [])
   $scope.makeReport = () ->
     console.log "REPORT MADE"
     report = $scope.report
-   
     data = 
       first_name  : report.fName
       middle_name : report.mName
@@ -105,11 +104,52 @@ angular.module("app.report", [])
       eye_color   : report.eyes.color
       race        : report.race.value
       description : report.description
+      initial_location :
+        lat : report.latitude
+        long : report.longitude
       submitter   : report.submitter
     console.log data
     # return # leave before breaking
 
-    $http.post('http://projectshepherd.herokuapp.com/missing_people', data)
+    output_data = 
+      data : "{
+      'fName': 'test',
+      'mName': 'middle',
+      'lName': 'user',
+      'height': 72,
+      'age': 20,
+      'weight': 160,
+      'sex': 'M',
+      'complexion': 'fair',
+      'description': 'sldkfjsldfjsldfj',
+      'submitter': {
+        'fName': 'ax',
+        'mName': 'x',
+        'lName': 'x',
+        'phone': 'x',
+        'email': 'x'
+      },
+      'pictures' : [
+        {
+          web: 'http://projectshepherd.herokuapp.com/test_photos/david-richardson.jpg',
+          mobile: 'http://projectshepherd.herokuapp.com/test_photos/david-richardson.jpg'
+          thumb: 'http://projectshepherd.herokuapp.com/test_photos/david-richardson.jpg'
+        }
+      ],
+      'eyes': {
+        'color': 'Gray'
+      },
+      'hair': {
+        'color': 'Red'
+      },
+      'race': {
+        'value': 'Other'
+      }
+    }"
+
+    output_data = 
+      data : JSON.stringify data
+    $http.post('http://projectshepherd.herokuapp.com/missing_people', output_data)
       .success (response) ->
         null
       .error (err) ->
