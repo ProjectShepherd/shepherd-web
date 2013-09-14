@@ -18,15 +18,15 @@ module.exports = (grunt) ->
         ngmin:
             compile:
                 files:
-                    'generated/<%= pkg.name %>.jsmin.js': [
-                        'generated<%= pkg.name %>.js'
+                    'jsmin/<%= pkg.name %>.jsmin.js': [
+                        'generated/<%= pkg.name %>.js'
                     ]
 
         uglify:
             compile:
                 files:
-                    'generated/<%= pkg.name %>.min.js': [
-                        'generated/<%= pkg.name %>.jsmin.js'
+                    'jsmin/<%= pkg.name %>.min.js': [
+                        'jsmin/<%= pkg.name %>.jsmin.js'
                     ]
 
         sass:
