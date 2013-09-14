@@ -3,4 +3,8 @@
   <div class="pure-u-1-3" ng-repeat="person in people | limitTo:9">
     <div ng-include="'partials/card.html'"></div> 
   </div>
+  <div class="pure-u-1" id="noone-found" ng-hide="people">
+    We're sorry, there doesn't seem to be a report by that name.
+    Please <a href="" ng-href="#/create">create one</a> here.
+  </div>
 </div>
