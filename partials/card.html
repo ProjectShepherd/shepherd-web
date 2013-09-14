@@ -2,6 +2,12 @@
   <div class="card-image">
       <img src={{web(person)}}/>
   </div>
+  <div class="card-status card-missing" ng-hide="person.found">
+    MISSING
+  </div>
+  <div class="card-status card-found" ng-show="person.found">
+    FOUND
+  </div>
   <div class="card-name">
     {{person.first_name}} {{person.last_name}}, {{person.age}}
   </div>

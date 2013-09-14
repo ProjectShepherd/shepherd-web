@@ -2,6 +2,12 @@ angular.module("app.search", [])
 
 .controller "Search", ($scope, $http, $location) ->
 
+  $scope.checkResults = () ->
+    if $scope.people
+      return false
+    else
+      return true
+
   $scope.web = (person) ->
     if(!person)
       'http://lorempixel.com/400/400/business/2'

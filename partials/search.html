@@ -1,6 +1,10 @@
-<h1 id="app-desc">These are the people you searched for.</h1>
+<h1 id="app-desc" ng-show="people">Is this who you're searching for?</h1>
 <div class="pure-g-r" ng-init="initPeople()">
   <div class="pure-u-1-3" ng-repeat="person in people | limitTo:9">
     <div ng-include="'partials/card.html'"></div> 
+  </div>
+  <div class="pure-u-1" id="noone-found" ng-hide="people">
+    We're sorry, there doesn't seem to be a report by that name.
+    Please <a href="" ng-href="#/create">create one</a> here.
   </div>
 </div>
