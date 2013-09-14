@@ -107,14 +107,12 @@ angular.module("app.report", [])
       description : report.description
       submitter   : report.submitter
     console.log data
-    return # leave before breaking
+    # return # leave before breaking
 
-    $http.post('API/missing_persons', data)
-      .success(response) ->
-        console.log response
+    $http.post('http://projectshepherd.herokuapp.com/missing_people', data)
+      .success (response) ->
         null
-      .error(err) ->
-        console.log err
+      .error (err) ->
         null
     null
   null
