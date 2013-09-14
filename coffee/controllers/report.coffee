@@ -16,5 +16,7 @@ angular.module("app.report", [])
     # processing
 
     $http.post(data)
-    .success((response) ->)
-    .error((err) ->)
+      .success(response) ->
+        console.log response
+      .error(err) ->
+        console.log err
