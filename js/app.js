@@ -1,6 +1,7 @@
 
 var app = angular.module('app', [
-    'app.home'
+    'app.home',
+    'app.report'
 ]);
 
 app.config( ['$routeProvider', function ($routeProvider) {
