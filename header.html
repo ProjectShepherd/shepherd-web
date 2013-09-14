@@ -8,5 +8,11 @@
       <li>
         <a ng-href="#/create">Make Report</a>
       </li>
+      <li>
+        <form id="search-form" ng-controller="Search">
+          <input id="search-box" name="q" size="10" type="text" ng-model="params.query" placeholder="Name" required/>
+          <button id="search-btn" ng-click="navigateToSearch(params)">Search</button>
+        </form>
+      </li>
   </div>
 </div>

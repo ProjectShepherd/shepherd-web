@@ -1,5 +1,4 @@
-
-app = angular.module("app", ["app.home", "app.report", "app.providers"])
+app = angular.module("app", ["app.home", "app.report", "app.search", "app.providers"])
 
 app.config ["$routeProvider", ($routeProvider) ->
 
@@ -12,6 +11,10 @@ app.config ["$routeProvider", ($routeProvider) ->
   .when "/",
     templateUrl: "partials/home.html"
     controller: "Home"
+
+  .when "/search",
+    templateUrl: "partials/search.html"
+    controller: "Search"
 ]
 
 BASEURL = "XXXX"
