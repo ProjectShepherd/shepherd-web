@@ -1,14 +1,12 @@
 <div class="card">
   <div class="card-image">
-    <div class="card-placeholder-image">
-      <img src="http://lorempixel.com/400/400/"/>
-    </div>
+      <img src={{web(person)}}/>
   </div>
   <div class="card-name">
     {{person.first_name}} {{person.last_name}}, {{person.age}}
   </div>
   <div class="card-text">
-    Last seen near {{person.initial_location.lat}},{{person.initial_location.long}}<br/>
+    Last seen near {{window.geoCodeLatLng(person.initial_location.lat, person.initial_location.long)}}<br/>
     {{person.description}}
   </div>
 </div>
