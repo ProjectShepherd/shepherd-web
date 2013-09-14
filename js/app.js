@@ -11,3 +11,5 @@ app.config( ['$routeProvider', function ($routeProvider) {
         .when('/create',{templateUrl: 'partials/report.html',   controller: 'Report'})
         .when('/',      {templateUrl: 'partials/home.html',     controller: 'Home'});
 }]);
+
+var BASEURL = 'XXXX';

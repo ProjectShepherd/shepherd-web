@@ -1,7 +1,7 @@
 
 angular.module('app.report', [])
 
-.controller('Report', function ($scope, FormList) {
+.controller('Report', function ($scope, $http, FormList) {
     console.log('MAKING A REPORT');
     $scope.eyeColors = FormList.eyes;
     $scope.hairColors = FormList.hair;
@@ -12,5 +12,16 @@ angular.module('app.report', [])
 
     $scope.makeReport = function () {
         console.log('REPORT MADE');
+        var data = $scope.report;
+
+        // processing
+
+        $http.post(data)
+            .success( function (response) {
+                
+            })
+            .error( function (err) {
+                
+            });
     };
 });
