@@ -41,6 +41,7 @@ $card-size: 300px;
   background-color: $card-background;
   margin: $card-padding;
   max-width: $card-size;
+  overflow: hidden;
 }
 
 .card-image {

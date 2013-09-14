@@ -5,9 +5,10 @@
     </div>
   </div>
   <div class="card-name">
-    {{person.firstname}} {{person.lastname}}, {{person.age}}
+    {{person.first_name}} {{person.last_name}}, {{person.age}}
   </div>
   <div class="card-text">
-    Last seen near {{person.location}}
+    Last seen near {{person.initial_location.lat}},{{person.initial_location.long}}<br/>
+    {{person.description}}
   </div>
 </div>
