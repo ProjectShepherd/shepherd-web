@@ -81,18 +81,18 @@
                                          'geoposition1d' : '<STATE>',
                                          'geoposition1e' : '<COUNTRY>',
                                        }
-                });">Map it!</button>
+                }); ">Map it!</button>
             </label>
             
             <div class="pure-g-r">
                 <div class="pure-u-1-4">
                     <label>Latitude</label>
-            		<input type="text" name="geoposition1a" id="geoposition1a" size="15" readonly>
+            		<input type="text" id="geoposition1a" ng-model="report.latitude" size="15" >
                 </div>
             
                 <div class="pure-u-1-4">
                     <label>Longitude</label>
-            		<input type="text" name="geoposition1a" id="geoposition1b" size="15" readonly>
+            		<input type="text" id="geoposition1b" ng-model="report.longitude" size="15" >
 
                 </div>
             </div>
@@ -146,4 +146,4 @@
 	</form>
 </div>
 
-<!-- <pre>{{ report | json }}</pre> -->
+ <pre>{{ report | json }}</pre>
