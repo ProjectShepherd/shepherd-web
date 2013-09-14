@@ -35,17 +35,9 @@ module.exports = (grunt) ->
                 dest:   'styles/style.min.css'
 
         watch:
-            sass:
+            compile:
                 files:
-                    ['styles/**.scss']
-                tasks:
-                    ['sass']
-                options:
-                    livereload: true
-
-            scripts:
-                files:
-                    ['js/**/*.js']
+                    ['styles/**.scss', 'coffee/**/*.coffee']
                 tasks:
                     ['default']
                 options:

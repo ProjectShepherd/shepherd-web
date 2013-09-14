@@ -5,14 +5,13 @@ app.config ["$routeProvider", ($routeProvider) ->
 
   $routeProvider
 
-  .when("/create",
+  .when "/create",
     templateUrl: "partials/report.html"
     controller: "Report"
-  )
+
   .when "/",
     templateUrl: "partials/home.html"
     controller: "Home"
-
 ]
 
 BASEURL = "XXXX"
