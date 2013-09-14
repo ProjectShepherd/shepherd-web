@@ -1,4 +1,4 @@
-$card-background: #aaaaaa;
+$card-background: #9C6B4C;
 $card-padding: 10px;
 $card-size: 300px;
 
@@ -17,9 +17,19 @@ $card-size: 300px;
   background-color: black;
 }
 
+.card-name,
 .card-text {
   text-align: center;
-  margin-top: $card-padding;
+  padding: $card-padding;
+}
+
+.card-name {
+  font-weight: bold;
+  padding-bottom: 0px;
+}
+
+.card-text {
+  padding-top: 0px;
 }
 
 @media (max-width: 768px) {

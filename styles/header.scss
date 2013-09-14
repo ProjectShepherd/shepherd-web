@@ -1,3 +1,7 @@
+$header-background: #7F583F;
+$header-hover: #9C6B4C;
+$header-text-color: white;
+
 .pure-menu.pure-menu-pull-right {
   display: table;
   width: 100%;
@@ -11,6 +15,22 @@
     text-align: right;
 }
 
+.pure-menu.pure-menu-open {
+  background-color: $header-background;
+}
+
 .sticky-header {
   height: 38px;
+}
+
+.sticky-header .pure-menu-heading {
+  color: $header-text-color;
+}
+
+.sticky-header li a {
+  color: white;
+}
+
+.sticky-header li a:hover {
+  background-color: $header-hover;
 }

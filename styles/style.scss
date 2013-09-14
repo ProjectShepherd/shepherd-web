@@ -2,16 +2,20 @@
 @import "card";
 
 $body-max-width: 720px;
+$page-background: #FFF0DA;
 
 #app-desc {
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
 }
 
 body {
-  background-color: white;
+  background-color: $page-background;
 }
 
 .main-view {
   margin: 0 auto;
-  max-width: $body-max-width; 
+  max-width: $body-max-width;
 }
