@@ -8,23 +8,26 @@ module.exports = (grunt) ->
             src:
                 ['generated']
 
-        concat:
-            js:
-                src:    ['js/**/*.js']
-                dest:   'generated/app.js'
+        coffee:
+            compile:
+                files:        
+                    'generated/<%= pkg.name %>.js': [
+                        'coffee/**/*.coffee'
+                    ]
 
         ngmin:
-            deploy:
-                src:    ['generated/app.js']
-                dest:   'generated/app.ngmin.js'
-            dev:
-                src:    ['generated/app.js']
-                dest:   'jsmin/app.js'
+            compile:
+                files:
+                    'generated/<%= pkg.name %>.jsmin.js': [
+                        'generated<%= pkg.name %>.js'
+                    ]
 
         uglify:
-            deploy:
-                src:    'generated/app.ngmin.js'
-                dest:   'jsmin/<%= pkg.name %>.min.js'
+            compile:
+                files:
+                    'generated/<%= pkg.name %>.min.js': [
+                        'generated/<%= pkg.name %>.jsmin.js'
+                    ]
 
         sass:
             deploy:
@@ -49,13 +52,11 @@ module.exports = (grunt) ->
                     livereload: true
 
     grunt.loadNpmTasks 'grunt-contrib-clean'
-    grunt.loadNpmTasks 'grunt-contrib-concat'
     grunt.loadNpmTasks 'grunt-contrib-uglify'
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-sass'
+    grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-ngmin'
 
-    grunt.registerTask 'style', ['sass']
     grunt.registerTask 'default', ['build', 'clean']
-    grunt.registerTask 'build', ['concat', 'ngmin', 'uglify', 'sass']
-    grunt.registerTask 'noSass', ['concat', 'ngmin', 'uglify']
+    grunt.registerTask 'build', ['coffee', 'ngmin', 'uglify', 'sass']
