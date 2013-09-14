@@ -1,0 +1,38 @@
+
+<div>
+	<h2>
+		Make a Missing Persons Report
+	</h2>
+
+	<form ng-submit="makeReport()">
+		first name<input type="text" ng-model="report.fName" required></input>
+		<br>
+		last name<input type="text" ng-model="report.lName" required></input>
+		<br>
+		height<input type="number" ng-model="report.height" required></input>inches
+		<br>
+		age<input type="number" ng-model="report.age" required></input>
+		<br>
+		weight<input type="number" ng-model="report.weight" required></input>
+		<br>
+		sex
+		<br>
+		Male<input type="radio" value="M" ng-model="report.sex">
+		Female<input type="radio" value="F" ng-model="report.sex">
+		<br>
+		eyes
+		<select ng-model="report.eye" ng-options="choice.color for choice in eyeColors" required></select>
+		<br>
+		hair
+		<select ng-model="report.hair" ng-options="choice.color for choice in hairColors" required></select>
+		<br>
+		race
+		<select ng-model="report.race" ng-options="choice.value for choice in raceChoices" required></select>
+		<br>
+		complexion<input type="text" ng-model="report.complexion" required></input>
+		<br>
+		<input type="submit" value="Make Report"></input>
+	</form>
+</div>
+
+<pre>{{ report | json }}</pre>
