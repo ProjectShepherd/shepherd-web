@@ -1,4 +1,5 @@
 .sass-cache
+.swp
 node_modules
 jsmin
 styles/style.min.css

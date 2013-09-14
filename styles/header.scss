@@ -1,0 +1,12 @@
+.pure-menu.pure-menu-pull-right {
+  display: table;
+  width: 100%;
+}
+.pure-menu.pure-menu-pull-right .pure-menu-heading,
+.pure-menu.pure-menu-pull-right > ul {
+  display: table-cell;
+  vertical-align: middle;
+}
+.pure-menu.pure-menu-pull-right > ul {
+    text-align: right;
+}
