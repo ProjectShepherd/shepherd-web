@@ -2,24 +2,25 @@
 
 <head>
 	<title>Shepherd</title>
-	<link rel="stylesheet" src="styles/bootstrap-combined.min.css">
-	<link rel="stylesheet" src="styles/style.min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+	<link rel="stylesheet" href="styles/style.min.css">
 </head>
 
 <body>
-	
-</body>	
+
+  <div ng-include="'header.html'"></div>
 
 	<div ng-view>
 	</div>
+  
 
-	<footer>
+  <footer>
 		<a ng-href="#/">Home</a>
 		<a ng-href="#/create">Make Report</a>
-
 	</footer>
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="jsmin/app.js"></script>
+</body>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-	<script src="lib/ui-bootstrap-tpls.min.js"></script>
-	<script src="jsmin/shepherd.min.js"></script>
 </html>
