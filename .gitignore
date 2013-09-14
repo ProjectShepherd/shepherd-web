@@ -1,5 +1,6 @@
 .sass-cache
-.swp
+*.swp
+*.DS_Store
 node_modules
 jsmin
 styles/style.min.css
