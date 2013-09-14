@@ -1,7 +1,7 @@
 
 angular.module("app.report", [])
 
-.controller "Report", ($scope, $http, FormList) ->
+.controller "Report", ($scope, $http, $q, FormList) ->
 
   $scope.eyeColors = FormList.eyes
   $scope.hairColors = FormList.hair
@@ -66,23 +66,26 @@ angular.module("app.report", [])
       access  : 'public'
 
     pics = {}
-    # loop through conversion options
-    for conv in convert_options 
-      console.log 'in convert loop'
-      filepicker.convert(blob, conv.options, store_options,
+
+    convert = (convOptions) ->
+      filepicker.convert(blob, convOptions, store_options,
         (newInkblob) -> 
           console.log newInkblob
-          console.log 'In conv list'
           # adding to pics object
           pics[conv.name] = newInkblob.url
           null
         , (FPError) ->
-          console.log FPError.toString()
           null
         , (percent) ->
           # console.log percent/3
           null
       )
+
+
+    # loop through conversion options
+    for conv in convert_options 
+      convert (conv.options)
+      console.log 'in convert loop'
     return pics
 
   # create the report when the form is submitted
