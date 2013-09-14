@@ -1,6 +1,7 @@
 $header-background: #7F583F;
 $header-hover: #9C6B4C;
 $header-text-color: white;
+$search-background: #9C6B4C;
 
 .pure-menu.pure-menu-pull-right {
   display: table;
@@ -33,4 +34,30 @@ $header-text-color: white;
 
 .sticky-header li a:hover {
   background-color: $header-hover;
+}
+
+// Search box
+#search-btn {
+  margin-right: 10px;
+  background: $search-background;
+  color:white;
+  border-radius:0 10px 10px 0;
+  -moz-border-radius:0 10px 10px 0;
+  -webkit-border-radius:0 10px 10px 0;
+  -o-border-radius:0 10px 10px 0;
+  border:0 none;
+  padding-right: 10px;
+}
+ 
+#search-box {
+  background: #eee;
+   border-radius:10px 0 0 10px;
+  -moz-border-radius:10px 0 0 10px;
+  -webkit-border-radius:10px 0 0 10px;
+  -o-border-radius:10px 0 0 10px;
+  border:0 none;
+  width:160px;
+  margin-left: 20px;
+  padding: 2px;
+  padding-left: 10px;
 }

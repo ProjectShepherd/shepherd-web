@@ -1,6 +1,6 @@
 <h1 id="app-desc">Shepherd helps you find your lost loved ones.</h1>
-<div class="pure-g-r animate-container" ng-init="initPeople()">
-  <div class="pure-u-1-3 animate-card" ng-repeat="person in people">
+<div class="pure-g-r" ng-init="initPeople()">
+  <div class="pure-u-1-3" ng-repeat="person in people | limitTo:9" ng-animate="'custom'">
     <div ng-include="'partials/card.html'"></div> 
   </div>
 </div>
