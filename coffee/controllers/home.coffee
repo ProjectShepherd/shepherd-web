@@ -2,12 +2,29 @@ angular.module("app.home", [])
 
 .controller "Home", ($scope, $http) ->
 
+  $scope.geocoder = new google.maps.Geocoder()
+
+  $scope.geoCodeLatLng = (lat, lng) ->
+    latlng = new google.maps.LatLng(lat, lng)
+    result = $scope.geocoder.geocode({'latLng': latlng}, (results, status) ->
+      if (status == google.maps.GeocoderStatus.OK)
+        if (results[1])
+          console.log(results[1].formatted_address)
+          return results[1].formatted_address
+        else
+          console.log('Unknown location')
+          return 'unknown location'
+      else
+        console.log('Geocoder failed due to: ' + status)
+        return 'failure'
+    )
+
   $scope.web = (person) ->
     if(!person)
-      'http://lorempixel.com/400/400'
+      'http://lorempixel.com/400/400/business/2'
     else
       if(!person.pictures[0])
-        'http://lorempixel.com/400/400'
+        'http://lorempixel.com/400/400/business/2'
       else 
         person.pictures[0].web
 

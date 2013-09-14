@@ -4,10 +4,10 @@ angular.module("app.search", [])
 
   $scope.web = (person) ->
     if(!person)
-      'http://lorempixel.com/400/400'
+      'http://lorempixel.com/400/400/business/2'
     else
       if(!person.pictures[0])
-        'http://lorempixel.com/400/400'
+        'http://lorempixel.com/400/400/business/2'
       else 
         person.pictures[0].web
 

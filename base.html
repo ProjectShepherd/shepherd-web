@@ -18,25 +18,6 @@
   <script src="jsmin/filepicker.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-  <script>
-    // code used to call geocoding service 
-    geocoder = new google.maps.Geocoder();
-    window.geoCodeLatLng = function(lat, lng) {
-        var latlng = new google.maps.LatLng(lat, lng);
-        geocoder.geocode({'latLng': latlng}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          if (results[1]) {
-            results[1].formatted_address;
-            console.log(results[1].formatted_address);
-          } else {
-            console.log('Unknown location');
-          }
-        } else {
-          console.log('Geocoder failed due to: ' + status);
-        }
-        });   
-    }
-  </script>
   <script src="jsmin/shepherd.jsmin.js"></script>
 </body>
 
